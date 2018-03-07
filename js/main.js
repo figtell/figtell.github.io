@@ -13,7 +13,7 @@
     Hb,
     dataURL;
 
-  $(document).ready(function(){
+  $(window).load(function(){
         var imageFile = new Image();
         imageFile.src = "img/talent.jpg";
         Wb = cvb.width = cvk.width = imageFile.width;
