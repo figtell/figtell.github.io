@@ -14,27 +14,27 @@
     dataURL;
 
   $(window).load(function(){
-        var imageFile = new Image();
-        imageFile.src = "img/talent.jpg";
-        Wb = cvb.width = cvk.width = imageFile.width;
-        Hb = cvb.height = cvk.height = imageFile.height;
-        imageFile.onload = function(){
+        var imageFilew = new Image();
+        imageFilew.src = "img/talent.jpg";
+        Wb = cvb.width = cvk.width = imageFilew.width;
+        Hb = cvb.height = cvk.height = imageFilew.height;
+        imageFilew.onload = function(){
           ctb.clearRect(0, 0, Wb, Hb);
-          ctb.drawImage(imageFile, 0, 0);
+          ctb.drawImage(imageFilew, 0, 0);
         };
         init();
     });
 
   function drawFile(){
-    var imageFile = new Image();
+    var imageFiled = new Image();
 
     if(dataURL){
-      imageFile.src = dataURL;
-      W = cv.width = imageFile.width;
-      H = cv.height = imageFile.height;
-      imageFile.onload = function(){
+      imageFiled.src = dataURL;
+      W = cv.width = imageFiled.width;
+      H = cv.height = imageFiled.height;
+      imageFiled.onload = function(){
         ctx.clearRect(0, 0, W, H);
-        ctx.drawImage(imageFile, 0, 0);
+        ctx.drawImage(imageFiled, 0, 0);
       };
     }
   }
@@ -46,34 +46,23 @@
   }
 
   function clicked(){
-    var imageFile = new Image();
-    imageFile.src = "img/talentB.jpg";
-    Wb = cvb.width = imageFile.width;
-    Hb = cvb.height = imageFile.height;
-    imageFile.onload = function(){
+    var imageFilec = new Image();
+    imageFilec.src = "img/talentB.jpg";
+    Wb = cvb.width = imageFilec.width;
+    Hb = cvb.height = imageFilec.height;
+    imageFilec.onload = function(){
       ctb.clearRect(0, 0, Wb, Hb);
-      ctb.drawImage(imageFile, 0, 0);
+      ctb.drawImage(imageFilec, 0, 0);
     };
   }
   function released(){
-    var imageFile = new Image();
-    imageFile.src = "img/talent.jpg";
-    Wb = cvb.width = imageFile.width;
-    Hb = cvb.height = imageFile.height;
-    imageFile.onload = function(){
+    var imageFiler = new Image();
+    imageFiler.src = "img/talent.jpg";
+    Wb = cvb.width = imageFiler.width;
+    Hb = cvb.height = imageFiler.height;
+    imageFiler.onload = function(){
       ctb.clearRect(0, 0, Wb, Hb);
-      ctb.drawImage(imageFile, 0, 0);
-    };
-  }
-
-  function changePic(path){
-    var imageFile = new Image();
-    imageFile.src = path;
-    W = cv.width = imageFile.width;
-    H = cv.height = imageFile.height;
-    imageFile.onload = function(){
-      ctx.clearRect(0, 0, W, H);
-      ctx.drawImage(imageFile, 0, 0);
+      ctb.drawImage(imageFiler, 0, 0);
     };
   }
 
