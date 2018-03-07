@@ -44,14 +44,15 @@
   }
 
   function clicked(){
-    var imageFile = new Image();
+    /*var imageFile = new Image();
     imageFile.src = "img/talentB.jpg";
     Wb = cvb.width = imageFile.width;
     Hb = cvb.height = imageFile.height;
     imageFile.onload = function(){
       ctb.clearRect(0, 0, Wb, Hb);
       //ctb.drawImage(imageFile, 0, 0);
-    };
+    };*/
+    ctb.clearRect(0, 0, Wb, Hb);
   }
   function released(){
     var imageFile = new Image();
