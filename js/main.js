@@ -5,36 +5,34 @@
     ctx = cv.getContext('2d'),
     cvb = document.getElementById('cvBox'),
     ctb = cvb.getContext('2d'),
-    cvk = document.getElementById('cvBack'),
-    ctk = cvk.getContext('2d'),
     W,
     Wb,
     H,
     Hb,
     dataURL;
 
-  $(window).load(function(){
-        var imageFilew = new Image();
-        imageFilew.src = "img/talent.jpg";
-        Wb = cvb.width = cvk.width = imageFilew.width;
-        Hb = cvb.height = cvk.height = imageFilew.height;
-        imageFilew.onload = function(){
+  $(document).ready(function(){
+        var imageFile = new Image();
+        imageFile.src = "img/talent.jpg";
+        Wb = cvb.width = imageFile.width;
+        Hb = cvb.height = imageFile.height;
+        imageFile.onload = function(){
           ctb.clearRect(0, 0, Wb, Hb);
-          ctb.drawImage(imageFilew, 0, 0);
+          ctb.drawImage(imageFile, 0, 0);
         };
         init();
     });
 
   function drawFile(){
-    var imageFiled = new Image();
+    var imageFile = new Image();
 
     if(dataURL){
-      imageFiled.src = dataURL;
-      W = cv.width = imageFiled.width;
-      H = cv.height = imageFiled.height;
-      imageFiled.onload = function(){
+      imageFile.src = dataURL;
+      W = cv.width = imageFile.width;
+      H = cv.height = imageFile.height;
+      imageFile.onload = function(){
         ctx.clearRect(0, 0, W, H);
-        ctx.drawImage(imageFiled, 0, 0);
+        ctx.drawImage(imageFile, 0, 0);
       };
     }
   }
@@ -46,23 +44,23 @@
   }
 
   function clicked(){
-    var imageFilec = new Image();
-    imageFilec.src = "img/talentB.jpg";
-    Wb = cvb.width = imageFilec.width;
-    Hb = cvb.height = imageFilec.height;
-    imageFilec.onload = function(){
+    var imageFile = new Image();
+    imageFile.src = "img/talentB.jpg";
+    Wb = cvb.width = imageFile.width;
+    Hb = cvb.height = imageFile.height;
+    imageFile.onload = function(){
       ctb.clearRect(0, 0, Wb, Hb);
-      ctb.drawImage(imageFilec, 0, 0);
+      //ctb.drawImage(imageFile, 0, 0);
     };
   }
   function released(){
-    var imageFiler = new Image();
-    imageFiler.src = "img/talent.jpg";
-    Wb = cvb.width = imageFiler.width;
-    Hb = cvb.height = imageFiler.height;
-    imageFiler.onload = function(){
+    var imageFile = new Image();
+    imageFile.src = "img/talent.jpg";
+    Wb = cvb.width = imageFile.width;
+    Hb = cvb.height = imageFile.height;
+    imageFile.onload = function(){
       ctb.clearRect(0, 0, Wb, Hb);
-      ctb.drawImage(imageFiler, 0, 0);
+      ctb.drawImage(imageFile, 0, 0);
     };
   }
 
