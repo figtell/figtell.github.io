@@ -5,6 +5,7 @@
     ctx = cv.getContext('2d'),
     cvb = document.getElementById('cvBox'),
     ctb = cvb.getContext('2d'),
+    line = document.getElementById('lineText'),
     W,
     Wb,
     H,
@@ -13,7 +14,7 @@
 
   $(document).ready(function(){
         var imageFile = new Image();
-        imageFile.src = "img/talent.jpg";
+        imageFile.src = "img/talentB.jpg";
         Wb = cvb.width = imageFile.width;
         Hb = cvb.height = imageFile.height;
         imageFile.onload = function(){
@@ -28,11 +29,11 @@
 
     if(dataURL){
       imageFile.src = dataURL;
-      W = cv.width = imageFile.width;
-      H = cv.height = imageFile.height;
+      W = cv.width = imageFile.width*1.3;
+      H = cv.height = imageFile.height*1.3;
       imageFile.onload = function(){
         ctx.clearRect(0, 0, W, H);
-        ctx.drawImage(imageFile, 0, 0);
+        ctx.drawImage(imageFile, 0, 0, W, H);
       };
     }
   }
@@ -41,6 +42,10 @@
     $('#upimg').on('change', upload);
     $('#cvBox').on('mousedown', clicked);
     $('#cvBox').on('mouseup', released);
+    $('#cvBox').on('touchstart', clicked);
+    $('#cvBox').on('touchend', released);
+    $('#cvHead').on('mousedown', clicked);
+    $('#cvHead').on('mouseup', released);
   }
 
   function clicked(){
@@ -56,7 +61,7 @@
   }
   function released(){
     var imageFile = new Image();
-    imageFile.src = "img/talent.jpg";
+    imageFile.src = "img/talentB.jpg";
     Wb = cvb.width = imageFile.width;
     Hb = cvb.height = imageFile.height;
     imageFile.onload = function(){
