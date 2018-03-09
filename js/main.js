@@ -10,17 +10,23 @@
     Wb,
     H,
     Hb,
-    dataURL;
+    dataURL,
+    inLine = document.getElementById('inputLine'),
+    lineArray = [];
 
   $(document).ready(function(){
         var imageFile = new Image();
-        imageFile.src = "img/talentB.jpg";
-        Wb = cvb.width = imageFile.width;
-        Hb = cvb.height = imageFile.height;
         imageFile.onload = function(){
           ctb.clearRect(0, 0, Wb, Hb);
           ctb.drawImage(imageFile, 0, 0);
         };
+        imageFile.src = "img/talentB.jpg";
+        Wb = cvb.width = imageFile.width;
+        Hb = cvb.height = imageFile.height;
+        $('#btnLineSet').click(function(){
+          lineArray.push(inLine.value);
+          alert(lineArray);
+        });
         init();
     });
 
@@ -28,13 +34,13 @@
     var imageFile = new Image();
 
     if(dataURL){
-      imageFile.src = dataURL;
-      W = cv.width = imageFile.width*1.3;
-      H = cv.height = imageFile.height*1.3;
+      //W = cv.width = imageFile.width*1.3;
+      //H = cv.height = imageFile.height*1.3;
       imageFile.onload = function(){
-        ctx.clearRect(0, 0, W, H);
-        ctx.drawImage(imageFile, 0, 0, W, H);
+        ctx.clearRect(0, 0, cv.width, cv.height);
+        ctx.drawImage(imageFile, 0, 0, cv.width, cv.height);
       };
+      imageFile.src = dataURL;
     }
   }
 
@@ -59,6 +65,8 @@
     };*/
     ctb.clearRect(0, 0, Wb, Hb);
     //cvb.style.display="none";
+    line.innerHTML=lineArray;
+    setTimeout(function(){line.innerHTML='_'},3000);
   }
   function released(){
     //cvb.style.display="block";

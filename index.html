@@ -28,16 +28,20 @@ Please enter name of figtell:
 <form id="form"  style="display:none">
 <input type="file" id="upimg" />
 <br></br>
-<h3 id="lineText"> </h3>
+<h3 id="lineText">_</h3>
 <div id="viewArea" class="center">
   <img id="cvBack" style="position: absolute; margin:0 auto;left:0;right:0; z-index:0;" src="img/talent.jpg">
   <canvas id="cvBox" style="position: absolute; margin:0 auto;left:0;right:0; z-index:1;"></canvas>
-  <canvas id="cvHead" style="position: absolute; margin:0 auto;left:0;right:0; z-index:2;"></canvas>
+  <canvas id="cvHead" style="position: absolute; margin:0 auto;left:0;right:0; z-index:2;" width="200" height="200"></canvas>
 </div>
 <div id="viewAreaPlaceHolder" class="center">
   <img id="placeholder" src="img/talent.jpg" class="center">
 </div>
 </form>
+
+Enter line:
+<input id="inputLine" type="text"/>
+<button id="btnLineSet">add</button>
 
 <!--
 <hr>
