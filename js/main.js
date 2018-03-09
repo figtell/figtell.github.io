@@ -64,10 +64,12 @@
       //ctb.drawImage(imageFile, 0, 0);
     };*/
     ctb.clearRect(0, 0, Wb, Hb);
+    //cvb.style.display="none";
     line.innerHTML=lineArray;
     setTimeout(function(){line.innerHTML='_'},3000);
   }
   function released(){
+    //cvb.style.display="block";
     var imageFile = new Image();
     imageFile.src = "img/talentB.jpg";
     Wb = cvb.width = imageFile.width;
