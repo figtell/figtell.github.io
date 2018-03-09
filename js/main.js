@@ -18,8 +18,8 @@
         Wb = cvb.width = imageFile.width;
         Hb = cvb.height = imageFile.height;
         imageFile.onload = function(){
-          //ctb.clearRect(0, 0, Wb, Hb);
-          //ctb.drawImage(imageFile, 0, 0);
+          ctb.clearRect(0, 0, Wb, Hb);
+          ctb.drawImage(imageFile, 0, 0);
         };
         init();
     });
