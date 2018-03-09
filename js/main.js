@@ -57,18 +57,18 @@
       ctb.clearRect(0, 0, Wb, Hb);
       //ctb.drawImage(imageFile, 0, 0);
     };*/
-    //ctb.clearRect(0, 0, Wb, Hb);
-    cvb.style.display="none";
+    ctb.clearRect(0, 0, Wb, Hb);
+    //cvb.style.display="none";
   }
   function released(){
-    cvb.style.display="block";
+    //cvb.style.display="block";
     var imageFile = new Image();
     imageFile.src = "img/talentB.jpg";
     Wb = cvb.width = imageFile.width;
     Hb = cvb.height = imageFile.height;
     imageFile.onload = function(){
-      //ctb.clearRect(0, 0, Wb, Hb);
-      //ctb.drawImage(imageFile, 0, 0);
+      ctb.clearRect(0, 0, Wb, Hb);
+      ctb.drawImage(imageFile, 0, 0);
     };
   }
 
