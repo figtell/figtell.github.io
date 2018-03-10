@@ -12,6 +12,7 @@
     Hb,
     dataURL,
     inLine = document.getElementById('inputLine'),
+    textArea = document.getElementById('lineTextArea'),
     lineArray = [];
 
   $(document).ready(function(){
@@ -23,9 +24,16 @@
         imageFile.src = "img/talentB.jpg";
         Wb = cvb.width = imageFile.width;
         Hb = cvb.height = imageFile.height;
+        textArea.value = "";
         $('#btnLineSet').click(function(){
           lineArray.push(inLine.value);
-          alert(lineArray);
+          //alert(lineArray);
+          if(textArea.value){
+            textArea.value = textArea.value+"\n"+inLine.value;
+          }else{
+            textArea.value = inLine.value;
+          }
+          inLine.value = "";
         });
         init();
     });
@@ -52,6 +60,8 @@
     $('#cvBox').on('touchend', released);
     $('#cvHead').on('mousedown', clicked);
     $('#cvHead').on('mouseup', released);
+    $('#cvHead').on('touchstart', clicked);
+    $('#cvHead').on('touchend', released);
   }
 
   function clicked(){
@@ -65,8 +75,12 @@
     };*/
     ctb.clearRect(0, 0, Wb, Hb);
     //cvb.style.display="none";
-    line.innerHTML=lineArray;
-    setTimeout(function(){line.innerHTML='_'},3000);
+    //line.innerHTML=lineArray;
+    //alert(lineArray.length);
+    var cnt = Math.floor(Math.random()*lineArray.length);
+    //alert(cnt);
+    line.innerHTML=lineArray[cnt];
+    setTimeout(function(){line.innerHTML='_'},1500);
   }
   function released(){
     //cvb.style.display="block";

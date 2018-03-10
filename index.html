@@ -39,9 +39,13 @@ Please enter name of figtell:
 </div>
 </form>
 
+<form id="inpForm" style="display:none">
 Enter line:
 <input id="inputLine" type="text"/>
-<button id="btnLineSet">add</button>
+<button id="btnLineSet" type="button">add</button>
+<br>Event:<br>
+<textarea id="lineTextArea" rows="5" cols="50"></textarea>
+</form>
 
 <!--
 <hr>
@@ -56,6 +60,7 @@ Enter line:
 function setName(){
   document.getElementById('nameText').innerHTML=document.getElementById('inputName').value;
   document.getElementById('form').style.display = "block";
+  document.getElementById('inpForm').style.display = "block";
 }
 </script>
 <footer>
