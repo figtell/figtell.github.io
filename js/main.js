@@ -50,19 +50,26 @@
   });
 
   $(document).ready(function(){
-        var imageFile = new Image();
-        imageFile.src = "img/talentB.jpg";
-        imageFile.onload = function(){
-          Wb = cvt.width = cvb.width = imageFile.width;
-          Hb = cvt.height = cvb.height = imageFile.height;
-          ctb.clearRect(0, 0, Wb, Hb);
-          ctt.clearRect(0, 0, Wb, Hb);
-          ctb.drawImage(imageFile, 0, 0);
-        };
+    Wb = Hb = $(window).height()/2.2;
+    $('#cvBack').width(Wb);
+    $('#cvBack').height(Hb);
+    $('#placeholder').width(Wb);
+    $('#placeholder').height(Hb);
+    var imageFile = new Image();
+    imageFile.src = "img/talentB.jpg";
+    imageFile.onload = function(){
+      //Wb = cvt.width = cvb.width = imageFile.width;
+      cvt.width = cvb.width = Wb;
+      //Hb = cvt.height = cvb.height = imageFile.height;
+      cvt.height = cvb.height = Hb;
+      ctb.clearRect(0, 0, Wb, Hb);
+      ctt.clearRect(0, 0, Wb, Hb);
+      ctb.drawImage(imageFile, 0, 0, Wb, Hb);
+    };
 
-        textArea.value = "";
-        init();
-    });
+    textArea.value = "";
+    init();
+  });
 
   function drawFile(){
     var imageFile = new Image();
@@ -123,10 +130,12 @@
     var imageFile = new Image();
     imageFile.src = "img/talentB.jpg";
     imageFile.onload = function(){
-      Wb = cvb.width = imageFile.width;
-      Hb = cvb.height = imageFile.height;
+      //Wb = cvb.width = imageFile.width;
+      cvb.width = Wb;
+      //Hb = cvb.height = imageFile.height;
+      cvb.height = Hb;
       ctb.clearRect(0, 0, Wb, Hb);
-      ctb.drawImage(imageFile, 0, 0);
+      ctb.drawImage(imageFile, 0, 0, Wb, Hb);
     };
   }
 
