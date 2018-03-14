@@ -19,9 +19,12 @@
 <h1 id="nameText">Hello figtell</h1>
 
 <hr>
-Please enter name of figtell:
-<input id="inputName" type="text"/>
-<button id="btnSet" onclick="setName()">set</button>
+<table>
+<tr><td align="right">Name of figtell:</td>
+<td><input id="inputName" type="text"/></td><td></td></tr>
+<tr><td align="right">figure showed in:</td>
+<td><input id="inputPlace" type="text"/></td>
+<td><button id="btnSet">set</button></td></tr></table>
 
 <hr>
 
@@ -33,13 +36,14 @@ Please enter name of figtell:
   <img id="cvBack" style="position: absolute; margin:0 auto;left:0;right:0; z-index:0;" src="img/talent.jpg">
   <canvas id="cvBox" style="position: absolute; margin:0 auto;left:0;right:0; z-index:1;"></canvas>
   <canvas id="cvHead" style="position: absolute; margin:0 auto;left:0;right:0; z-index:2;" width="200" height="200"></canvas>
+  <canvas id="cvTop" style="position: absolute; margin:0 auto;left:0;right:0; z-index:3;"></canvas>
 </div>
 <div id="viewAreaPlaceHolder" class="center">
   <img id="placeholder" src="img/talent.jpg" class="center">
 </div>
 </form>
 
-<form id="inpForm" style="display:none">
+<form id="inpForm" style="display:none" action="#">
 Enter line:
 <input id="inputLine" type="text"/>
 <button id="btnLineSet" type="button">add</button>
@@ -56,13 +60,6 @@ Enter line:
 <hr>
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script type="text/javascript" src="js/main.js"></script>
-<script>
-function setName(){
-  document.getElementById('nameText').innerHTML=document.getElementById('inputName').value;
-  document.getElementById('form').style.display = "block";
-  document.getElementById('inpForm').style.display = "block";
-}
-</script>
 <footer>
   <small><center>&copy; 2018 figtell</center></small>
 </footer>
