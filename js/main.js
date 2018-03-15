@@ -50,7 +50,12 @@
   });
 
   $(document).ready(function(){
-    Wb = Hb = $(window).height()/2.2;
+    if(($(window).height()/2.2)<($(window).width()/2)){
+      Wb = Hb = $(window).height()/2.2;
+    }else{
+      Wb = Hb = $(window).width()/2;
+    }
+
     $('#cvBack').width(Wb);
     $('#cvBack').height(Hb);
     $('#placeholder').width(Wb);
@@ -95,13 +100,12 @@
     $('#cvHead').on('mouseup', released);
     $('#cvHead').on('touchstart', clicked);
     $('#cvHead').on('touchend', released);*/
-    $('#cvTop').on('mousedown', clicked);
-    $('#cvTop').on('mouseup', released);
-    $('#cvTop').on('touchstart', clicked);
-    $('#cvTop').on('touchend', released);
+    $('#cvTop').on('mousedown touchstart', clicked);
+    $('#cvTop').on('mouseup touchend', released);
   }
 
-  function clicked(){
+  function clicked(e){
+    e.preventDefault();
     /*var imageFile = new Image();
     imageFile.src = "img/talentB.jpg";
     Wb = cvb.width = imageFile.width;
@@ -125,7 +129,8 @@
       timer = setTimeout(function(){line.innerHTML='\xa0'},1500);
     }
   }
-  function released(){
+  function released(e){
+    e.preventDefault();
     //cvb.style.display="block";
     var imageFile = new Image();
     imageFile.src = "img/talentB.jpg";
