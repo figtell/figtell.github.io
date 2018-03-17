@@ -56,6 +56,7 @@
     }else{
       Wb = Hb = $(window).width()/2;
     }
+    alert(imgfront);
 
     $('#cvBack').width(Wb);
     $('#cvBack').height(Hb);
