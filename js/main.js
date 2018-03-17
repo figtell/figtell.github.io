@@ -15,6 +15,7 @@
     dataURL,
     inLine = document.getElementById('inputLine'),
     textArea = document.getElementById('lineTextArea'),
+    imgfront = document.getElementById('img2').value,
     lineArray = [],
     timer = null;
 
@@ -61,7 +62,7 @@
     $('#placeholder').width(Wb);
     $('#placeholder').height(Hb);
     var imageFile = new Image();
-    imageFile.src = "img/talentB.jpg";
+    imageFile.src = imgfront;
     imageFile.onload = function(){
       //Wb = cvt.width = cvb.width = imageFile.width;
       cvt.width = cvb.width = Wb;
@@ -133,7 +134,7 @@
     e.preventDefault();
     //cvb.style.display="block";
     var imageFile = new Image();
-    imageFile.src = "img/talentB.jpg";
+    imageFile.src = imgfront;
     imageFile.onload = function(){
       //Wb = cvb.width = imageFile.width;
       cvb.width = Wb;
