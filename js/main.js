@@ -1,5 +1,7 @@
 var figName = "",
-  playName = "";
+  playName = "",
+  stamp = 0,
+  picName = "";
 
 (function($){
   'use strict';
@@ -23,6 +25,12 @@ var figName = "",
     timer = null;
 
   $('#btnLineSet').click(function(){
+    var sendUrl = "http://www.basstray.io/figtell/webservice/?play="+playName+"&figure="+figName+"&picName="+picName+"&timeStamp="+stamp+"&line="+inLine.value;
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", sendUrl, true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+    //var response = JSON.parse(xhttp.responseText);
     lineArray.push(inLine.value);
     //alert(lineArray);
     if(textArea.value){
@@ -44,8 +52,8 @@ var figName = "",
     document.getElementById('nameText').innerHTML=document.getElementById('inputName').value;
     document.getElementById('form').style.display = "block";
     document.getElementById('inpForm').style.display = "block";
-    figName = document.getElementById('inputName').value + "_";
-    playName = document.getElementById('inputPlace').value + "_";
+    figName = document.getElementById('inputName').value;
+    playName = document.getElementById('inputPlace').value;
     inLine.focus();
   });
 
@@ -56,6 +64,7 @@ var figName = "",
   });
 
   $(document).ready(function(){
+    stamp = Date.now();
     if(($(window).height()/2.2)<($(window).width()/2)){
       Wb = Hb = $(window).height()/2.2;
     }else{
@@ -228,7 +237,8 @@ var Ftp = {
 					}
 				};
                 xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-                xhr.send("token=" + token + "&data=" + encodeURIComponent(base64) + "&file="+ playName + figName + file.name);
+                xhr.send("token=" + token + "&data=" + encodeURIComponent(base64)+"&file="+playName +"_"+figName+"_"+stamp+"_"+file.name);
+                picName = file.name;
             },
             false);
     },
