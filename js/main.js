@@ -56,7 +56,6 @@
     }else{
       Wb = Hb = $(window).width()/2;
     }
-    alert(imgfront);
     line.innerHTML='\xa0';
 
     $('#cvBack').width(Wb);
@@ -166,6 +165,8 @@
       };
     }
   }
+
+  // ftp token 754820d9-8892-408b-9ea2-30d4fbe658c8
 
   /*function readURL(input) {
 
