@@ -66,10 +66,15 @@ var figName = "",
   $(document).ready(function(){
     stamp = Date.now();
     if(($(window).height()/2.2)<($(window).width()/2)){
-      Wb = Hb = $(window).height()/2.2;
+      Hb = $(window).height()/2.2;
     }else{
-      Wb = Hb = $(window).width()/2;
+      Hb = $(window).width()/2;
     }
+    Wb = Hb*27/40;
+    //W = Hb/40*11;
+    cv.width = Hb*11/20;
+    //H = Hb/8*3;
+    cv.height = Hb*3/4;
     line.innerHTML='\xa0';
 
     $('#cvBack').width(Wb);
