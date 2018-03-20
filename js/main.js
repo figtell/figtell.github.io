@@ -72,7 +72,7 @@ var figName = "",
     }
     Wb = Hb*27/40;
     //W = Hb/40*11;
-    cv.width = Hb*11/20;
+    //cv.width = Hb*11/20;
     //H = Hb/8*3;
     cv.height = Hb*3/4;
     line.innerHTML='\xa0';
@@ -102,8 +102,10 @@ var figName = "",
 
     if(dataURL){
       //W = cv.width = imageFile.width*1.3;
+      //cv.width = imageFile.width*cv.height/imageFile.height;
       //H = cv.height = imageFile.height*1.3;
       imageFile.onload = function(){
+        cv.width = imageFile.width*cv.height/imageFile.height;
         ctx.clearRect(0, 0, cv.width, cv.height);
         ctx.drawImage(imageFile, 0, 0, cv.width, cv.height);
       };
