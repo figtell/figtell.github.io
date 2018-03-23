@@ -25,21 +25,23 @@ var figName = "",
     timer = null;
 
   $('#btnLineSet').click(function(){
-    var sendUrl = "http://www.basstray.io/figtell/webservice/?play="+playName+"&figure="+figName+"&picName="+picName+"&timeStamp="+stamp+"&line="+inLine.value;
-    var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", sendUrl, true);
-    xhttp.setRequestHeader("Content-type", "application/json");
-    xhttp.send();
-    //var response = JSON.parse(xhttp.responseText);
-    lineArray.push(inLine.value);
-    //alert(lineArray);
-    if(textArea.value){
-      textArea.value = textArea.value+"\n"+inLine.value;
-    }else{
-      textArea.value = inLine.value;
+    if(inLine.value.length > 0){
+      var sendUrl = "http://www.basstray.io/figtell/webservice/?play="+playName+"&figure="+figName+"&picName="+picName+"&timeStamp="+stamp+"&line="+inLine.value;
+      var xhttp = new XMLHttpRequest();
+      xhttp.open("POST", sendUrl, true);
+      xhttp.setRequestHeader("Content-type", "application/json");
+      xhttp.send();
+      //var response = JSON.parse(xhttp.responseText);
+      lineArray.push(inLine.value);
+      //alert(lineArray);
+      if(textArea.value){
+        textArea.value = textArea.value+"\n"+inLine.value;
+      }else{
+        textArea.value = inLine.value;
+      }
+      inLine.value = "";
+      inLine.focus();
     }
-    inLine.value = "";
-    inLine.focus();
   });
 
   $('#inputLine').keyup(function(event){
